@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# React Assessment Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains the solution to the React Assessment Application, which includes three key components: `FormPage`, `APIPage`, and `FormDetails`. The application demonstrates form handling, API data fetching, and a visually consistent UI using React and CSS.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Table of Contents
+1. [Overview](#overview)
+2. [Features](#features)
+3. [Screenshots](#screenshots)
+4. [Getting Started](#getting-started)
+5. [Folder Structure](#folder-structure)
+6. [Technologies Used](#technologies-used)
+7. [License](#license)
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Overview
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The React Assessment Application is designed to handle form data, display user details, and fetch random user data from an external API. It features:
+- A **Home Page** with navigation buttons.
+- A **Form Page** for user input with validation.
+- A **Form Details Page** to display submitted form details.
+- An **API Page** to fetch and display random user details.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `npm run build`
+- **Form Validation:**
+  - Validates required fields: `Name`, `Phone`, `Email`, `DOB`, and `Address`.
+  - Ensures proper format for phone numbers, email, and name.
+  - Displays appropriate error messages.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Form Details Page:**
+  - Displays submitted form data in a card-like layout.
+  - Consistent styling with gradient backgrounds and bold headings.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **API Integration:**
+  - Fetches random user data using `https://randomuser.me/api/`.
+  - Displays user details in a structured layout with avatar and information sections.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Screenshots
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 1. Home Page
+![Home Page](./screenshots/home-page.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 2. Form Page
+![Form Page](./screenshots/form-page.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 3. Form Details Page
+![Form Details Page](./screenshots/form-details-page.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 4. API Page
+![API Page](./screenshots/api-page.png)
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Getting Started
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Follow these steps to set up and run the application on your local machine.
 
-### Code Splitting
+### Prerequisites
+- **Node.js** (v14 or higher)
+- **npm** (v6 or higher)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Installation
+1. Clone the repository
+2. Execute with npm start
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+Technologies Used
+React: JavaScript library for building user interfaces.
+React Router: For navigation between pages.
+CSS: For styling and layout.
+RandomUser API: To fetch user data dynamically.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Acknowledgements
+RandomUser API for providing user data.
+Inspiration from design-focused React applications.
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Let me know if further edits are required!
