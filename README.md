@@ -45,7 +45,7 @@ The React Assessment Application is designed to handle form data, display user d
 ## Screenshots
 
 ### 1. Home Page
-![Home Page](./screenshots/home-page.png)
+![Home Page](./screenshots/Screenshot 2025-01-12 at 1.58.16 AM.png)
 
 ### 2. Form Page
 ![Form Page](./screenshots/form-page.png)
