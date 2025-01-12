@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/APIPage.css';
 
 const APIPage = () => {
   const [user, setUser] = useState(null);
+  const navigate = useNavigate();
 
   const fetchUserDetails = async () => {
     const response = await fetch('https://randomuser.me/api/');
@@ -14,6 +16,9 @@ const APIPage = () => {
     <div className="api-container">
       <button className="fetch-button" onClick={fetchUserDetails}>
         Fetch User Details
+      </button>
+      <button className="back-button" onClick={() => navigate(-1)}>
+        Back
       </button>
       {user && (
         <div className="details-card">
@@ -34,9 +39,8 @@ const APIPage = () => {
                 <p className="details-value">{user.phone}</p>
               </div>
             </div>
-              <p className="details-heading1">Address</p>
-              <p className="details-value">{`${user.location.street.name}, ${user.location.city}`}</p>
-            
+            <p className="details-heading1">Address</p>
+            <p className="details-value">{`${user.location.street.name}, ${user.location.city}`}</p>
           </div>
         </div>
       )}

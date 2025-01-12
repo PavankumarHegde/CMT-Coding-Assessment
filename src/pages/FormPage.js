@@ -8,6 +8,7 @@ const FormPage = () => {
     phone: '',
     email: '',
     dob: '',
+    gender: '',
     address: '',
   });
   const [error, setError] = useState('');
@@ -15,21 +16,25 @@ const FormPage = () => {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    setError(''); // Clear error on input change
+    setError('');
   };
 
   const validateForm = () => {
-    const { name, phone, email, dob, address } = formData;
+    const { name, phone, email, dob, gender, address } = formData;
 
-    if (!name || !phone || !email || !dob || !address) return 'All fields are required.';
+    if (!name || !phone || !email || !dob || !gender || !address)
+      return 'All fields are required.';
     if (!/^[a-zA-Z ]{1,15}$/.test(name)) return 'Name must be text only and max 15 characters.';
     if (!/^\d{10}$/.test(phone)) return 'Phone number must be exactly 10 digits.';
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return 'Enter a valid email address.';
-    const dobDate = new Date(dob);
-    const today = new Date();
-    if (dobDate >= today) return 'Date of birth must be in the past.';
-    if (address.length < 5) return 'Address must be at least 5 characters long.';
 
+    const today = new Date();
+    const dobDate = new Date(dob);
+    const maxDob = new Date(today.getFullYear() - 100, today.getMonth(), today.getDate());
+    if (dobDate < maxDob) return 'Age cannot be more than 100 years.';
+    if (dobDate >= today) return 'Date of birth must be in the past.';
+
+    if (address.length < 5) return 'Address must be at least 5 characters long.';
     return '';
   };
 
@@ -45,6 +50,7 @@ const FormPage = () => {
 
   return (
     <div className="form-container">
+      <button className="back-button" onClick={() => navigate(-1)}>Back</button>
       <form onSubmit={handleSubmit} className="form">
         <h2>Fill Your Details</h2>
         <input
@@ -74,6 +80,18 @@ const FormPage = () => {
           value={formData.dob}
           onChange={handleChange}
         />
+        <select
+          name="gender"
+          value={formData.gender}
+          onChange={handleChange}
+        >
+          <option value="" disabled>
+            Select Gender
+          </option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
         <textarea
           name="address"
           placeholder="Address"
