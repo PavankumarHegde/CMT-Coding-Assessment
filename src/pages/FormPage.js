@@ -48,6 +48,15 @@ const FormPage = () => {
     }
   };
 
+  const getMinAndMaxDOB = () => {
+    const today = new Date();
+    const maxDate = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+    const minDate = `${today.getFullYear() - 100}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+    return { minDate, maxDate };
+  };
+
+  const { minDate, maxDate } = getMinAndMaxDOB();
+
   return (
     <div className="form-container">
       <button className="back-button" onClick={() => navigate(-1)}>Back</button>
@@ -56,21 +65,21 @@ const FormPage = () => {
         <input
           type="text"
           name="name"
-          placeholder="Name"
+          placeholder="* Name"
           value={formData.name}
           onChange={handleChange}
         />
         <input
           type="text"
           name="phone"
-          placeholder="Phone"
+          placeholder="* Phone"
           value={formData.phone}
           onChange={handleChange}
         />
         <input
           type="email"
           name="email"
-          placeholder="Email"
+          placeholder="* Email"
           value={formData.email}
           onChange={handleChange}
         />
@@ -78,15 +87,18 @@ const FormPage = () => {
           type="date"
           name="dob"
           value={formData.dob}
+          min={minDate}
+          max={maxDate}
           onChange={handleChange}
         />
+        <p className="dob-helper">* Choose a DOB date between {minDate} and {maxDate}.</p>
         <select
           name="gender"
           value={formData.gender}
           onChange={handleChange}
         >
           <option value="" disabled>
-            Select Gender
+            * Select Gender
           </option>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
@@ -94,7 +106,7 @@ const FormPage = () => {
         </select>
         <textarea
           name="address"
-          placeholder="Address"
+          placeholder="* Address"
           value={formData.address}
           onChange={handleChange}
         />

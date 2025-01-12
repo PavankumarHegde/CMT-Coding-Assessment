@@ -96,3 +96,10 @@ select {
   background-color: #e5675d;
   box-shadow: 0 6px 15px rgba(240, 134, 101, 0.3);
 }
+
+.dob-helper {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
